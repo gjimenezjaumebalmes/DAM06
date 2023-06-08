@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Propiedades de la conexión -->
+
+        <!-- Driver JDBC -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- Conexión. Añadir ?createDatabaseIfNotExist=true para crear la BBDD  -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/Employees</property>
+
+        <!-- Usuario y password de la BBDD -->
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+
+        <!--  dialecto dentro del conector. Importante para claves ajenas-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Configuraciones adicionales -->
+
+        <!-- JDBC connection pool Conexiones concurrentes -->
+        <property name="connection.pool_size">5</property>
+
+        <!-- Una sesion de trabajo por Thread-->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Informa de las operaciones "reales" SQL. Interesante en desarrollo -->
+        <property name="show_sql">true</property>
+
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mapeig de les classes -->
+        <mapping class="com.example.model.Employees"/>
+        <mapping class="org.example.model.Departments"/>
+
+    </session-factory>
+</hibernate-configuration>
+
