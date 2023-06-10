@@ -1,0 +1,36 @@
+-- Crear la base de dades "Employees"
+CREATE DATABASE Employees;
+
+-- Utilitzar la base de dades "Employees"
+USE Employees;
+
+-- Crear la taula "departments"
+CREATE TABLE departments (
+  deptno INT AUTO_INCREMENT PRIMARY KEY,
+  deptname VARCHAR(45),
+  location VARCHAR(100)
+);
+
+-- Inserir dades a la taula "departments"
+INSERT INTO departments (deptname, location)
+VALUES ('vendes', 'Balmes, 10'),
+       ('compres', 'Pau Claris, 100');
+
+-- Crear la taula "employees"
+CREATE TABLE employees (
+  emp_no INT AUTO_INCREMENT PRIMARY KEY,
+  last_name VARCHAR(45),
+  first_name VARCHAR(30),
+  birth_date DATE,
+  gender ENUM('M', 'F'),
+  hire_date DATE,
+  role VARCHAR(100),
+  salary FLOAT,
+  deptno INT,
+  FOREIGN KEY (deptno) REFERENCES departments(deptno)
+);
+
+-- Inserir dades a la taula "employees"
+INSERT INTO employees (last_name, first_name, birth_date, gender, hire_date, role, salary, deptno)
+VALUES ('Perez', 'Paco', '1969-10-10', 'M', '2010-01-20', 'responsable area', 38000, 1), ('Alepa', 'Ramona', '1979-05-10', 'F', '2007-06-20', 'product owner', 40000, 2);
+
