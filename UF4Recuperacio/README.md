@@ -8,9 +8,9 @@ Configuració del projecte
 
 Abans d'executar el projecte, assegura't de configurar les credencials de la base de dades al fitxer application.properties. Pots trobar aquest fitxer a la carpeta de configuració del projecte.
 
-spring.datasource.url=jdbc:mysql://root:R4NbWxaR1q83JQfk1MrA@containers-us-west-155.railway.app:7187/railway
-spring.datasource.username=root
-spring.datasource.password=R4NbWxaR1q83JQfk1MrA
+
+
+
 
 Descripció del codi
 Classe Employees i Departments
