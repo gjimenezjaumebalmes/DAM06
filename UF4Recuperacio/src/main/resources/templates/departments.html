@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Departaments</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #007bff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .table th,
+        .table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .table-dark {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .table-dark th,
+        .table-dark td {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h3>Departaments</h3>
+    <a href="/" class="btn btn-primary">Tornar a l'index</a>
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th>Id departament</th>
+            <th>Nom</th>
+            <th>Localització</th>
+            <th>Accions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="department : ${departments}">
+            <td th:text="${department.deptNo}"></td>
+            <td th:text="${department.deptName}"></td>
+            <td th:text="${department.location}"></td>
+            <td>
+                <a th:href="@{/deleteDepartment/{deptNo}(deptNo=${department.deptNo})}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -27,6 +27,7 @@ public class App {
 
     public static void main(String[] args) {
         MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");  // Conexión al servidor MongoDB
+//        MongoClient mongoClient = MongoClients.create("mongodb://mongo:4OHGQdIY8JAmz268sENp@containers-us-west-194.railway.app:5780");  // Conexión al servidor MongoDB
         MongoDatabase database = mongoClient.getDatabase("restaurants");  // Base de datos MongoDB
 
         boolean collectionExists = database.listCollectionNames()

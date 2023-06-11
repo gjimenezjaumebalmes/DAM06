@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbf3aaa9-115d-4120-b1b4-c649f47e613a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/controllers/mainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/exceptions/ControllerExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/exceptions/ErrorMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/exceptions/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/model/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/model/Employees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/repositories/DepartmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/repositories/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/services/DepartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/java/com/guillemjimenez/services/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/resources/templates/departamentos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/resources/templates/empleados.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/resources/templates/nouDepartament.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UF4Recuperacio/src/main/resources/templates/nouEmpleat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,5 +98,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

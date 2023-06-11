@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Empleats</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #007bff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .table th,
+        .table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .table-dark {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .table-dark th,
+        .table-dark td {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h3>Empleats</h3>
+    <a href="/" class="btn btn-primary">Tornar a l'index</a>
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th>Id empleat</th>
+            <th>Nom</th>
+            <th>Cognom</th>
+            <th>Genere</th>
+            <th>Data de naixement</th>
+            <th>Data de incorporacio</th>
+            <th>Carrec</th>
+            <th>Salari</th>
+            <th>Departament</th>
+            <th>Accions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee: ${employees}">
+            <td th:text="${employee.empNo}"></td>
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.gender}"></td>
+            <td th:text="${employee.birthDate}"></td>
+            <td th:text="${employee.hireDate}"></td>
+            <td th:text="${employee.role}"></td>
+            <td th:text="${employee.salary}"></td>
+            <td th:text="${employee.department.deptName}"></td>
+            <td>
+                <a th:href="@{/deleteEmployee/{empNo}(empNo=${employee.empNo})}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
