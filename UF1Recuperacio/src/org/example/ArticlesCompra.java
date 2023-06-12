@@ -1,3 +1,5 @@
+package org.example;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -7,13 +9,13 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 
 public class ArticlesCompra implements Serializable {
     private String descripcio;                 // Variable per emmagatzemar la descripció de l'article
     private double quantitat;                  // Variable per emmagatzemar la quantitat de l'article
     private String unitat;                     // Variable per emmagatzemar la unitat de l'article
     private String seccio;                     // Variable per emmagatzemar la secció de l'article
-
 
     public ArticlesCompra() {
     }
@@ -65,9 +67,38 @@ public class ArticlesCompra implements Serializable {
 
     private static class Main {
         public static void run() throws IOException {
-            ArrayList<ArticlesCompra> llistaCompra = captureArticlesCompra();
-            generateXML(llistaCompra);
-            serializeObject(llistaCompra);
+            mostraMenu();
+        }
+
+        private static void mostraMenu() throws IOException {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            ArrayList<ArticlesCompra> llistaCompra = new ArrayList<>();
+            int opcio = 0;
+
+            while (opcio != 3) {
+                System.out.println("Benvingut a la llista de la compra!");
+                System.out.println("1. Fer la llista de la compra");
+                System.out.println("2. Llegir la llista de la compra");
+                System.out.println("3. Sortir");
+                System.out.println("Selecciona una opció: ");
+                opcio = Integer.parseInt(reader.readLine());
+
+                switch (opcio) {
+                    case 1:
+                        llistaCompra = captureArticlesCompra();
+                        generateXML(llistaCompra);
+                        serializeObject(llistaCompra);
+                        break;
+                    case 2:
+                        readXML();
+                        break;
+                    case 3:
+                        System.out.println("Fins aviat!");
+                        break;
+                    default:
+                        System.out.println("Opció no vàlida. Si us plau, selecciona una opció vàlida.");
+                }
+            }
         }
 
         private static ArrayList<ArticlesCompra> captureArticlesCompra() throws IOException {
@@ -114,6 +145,21 @@ public class ArticlesCompra implements Serializable {
 
                 writer.write("</llistacompra>");
                 writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        private static void readXML() {
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader("llista_compra.xml"));
+                String line;
+
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+
+                reader.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

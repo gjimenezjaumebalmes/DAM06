@@ -1,8 +1,8 @@
 <llistacompra>
   <article>
-        <descripcio>test</descripcio>
-        <quantitat>2.0</quantitat>
-        <unitat>grams</unitat>
-        <seccio>test</seccio>
+  <descripcio>test</descripcio>
+  <quantitat>12.0</quantitat>
+  <unitat>12</unitat>
+  <seccio>12</seccio>
   </article>
 </llistacompra>
