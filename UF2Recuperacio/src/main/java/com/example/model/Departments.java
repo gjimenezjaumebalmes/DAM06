@@ -1,38 +1,49 @@
-package Application;
+package com.example.model;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
-
+@Entity
+@Table(name = "departments")
 public class Departments {
-    private int deptNo;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "deptno")
+    private Integer deptNo;
+
+    @Column(name = "deptname")
     private String deptName;
 
+    @Column(name = "location")
     private String location;
 
+    @OneToMany(mappedBy = "department")
     private List<Employees> employees;
 
     // Constructors, getters and setters
 
-    public Departments() {
-        employees = new ArrayList<Employees>();
+    public Departments(String deptName) {
+        employees = new ArrayList<>();
     }
 
-    public Departments(String deptName, String location) {
+    public Departments(Integer deptNo, String deptName, String location) {
+        this.deptNo = deptNo;
         this.deptName = deptName;
         this.location = location;
-        employees = new ArrayList<Employees>();
+        employees = new ArrayList<>();
     }
 
-    // Getters and setters
+    public Departments() {
 
-    public int getDeptNo() {
+    }
+
+    public Integer getDeptNo() {
         return deptNo;
     }
 
-    public void setDeptNo(int deptNo) {
+    public void setDeptNo(Integer deptNo) {
         this.deptNo = deptNo;
     }
 
@@ -58,10 +69,5 @@ public class Departments {
 
     public void setEmployees(List<Employees> employees) {
         this.employees = employees;
-    }
-
-    public void addEmployee(Employees employee) {
-        employees.add(employee);
-        employee.setDepartment(this);
     }
 }

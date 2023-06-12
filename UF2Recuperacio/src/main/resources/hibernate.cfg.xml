@@ -33,7 +33,7 @@
 
         <!-- Mapeig de les classes -->
         <mapping class="com.example.model.Employees"/>
-        <mapping class="org.example.model.Departments"/>
+        <mapping class="com.example.model.Departments"/>
 
     </session-factory>
 </hibernate-configuration>
