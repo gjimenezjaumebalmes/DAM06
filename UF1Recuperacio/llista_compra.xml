@@ -1,8 +1,16 @@
 <llistacompra>
   <article>
-  <descripcio>test</descripcio>
-  <quantitat>12.0</quantitat>
-  <unitat>12</unitat>
-  <seccio>12</seccio>
+  <descripcio>pa</descripcio>
+  <quantitat>1.0</quantitat>
+  <unitat>barra</unitat>
+  <seccio>forn</seccio>
+  <preu>forn</preu>
+  </article>
+  <article>
+  <descripcio>cocacola</descripcio>
+  <quantitat>6.0</quantitat>
+  <unitat>llaunes</unitat>
+  <seccio>begudes</seccio>
+  <preu>begudes</preu>
   </article>
 </llistacompra>

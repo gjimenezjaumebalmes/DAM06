@@ -16,15 +16,17 @@ public class ArticlesCompra implements Serializable {
     private double quantitat;                  // Variable per emmagatzemar la quantitat de l'article
     private String unitat;                     // Variable per emmagatzemar la unitat de l'article
     private String seccio;                     // Variable per emmagatzemar la secció de l'article
+    private double preu;                       // Variable per emmagatzemar la secció de l'article
 
     public ArticlesCompra() {
     }
 
-    public ArticlesCompra(String descripcio, double quantitat, String unitat, String seccio) {
+    public ArticlesCompra(String descripcio, double quantitat, String unitat, String seccio, double preu) {
         this.descripcio = descripcio;
         this.quantitat = quantitat;
         this.unitat = unitat;
         this.seccio = seccio;
+        this.preu = preu;
     }
 
     // Getters and setters
@@ -59,6 +61,14 @@ public class ArticlesCompra implements Serializable {
 
     public void setSeccio(String seccio) {
         this.seccio = seccio;
+    }
+
+    public double getPreu() {
+        return preu;
+    }
+
+    public void setPreu(double preu) {
+        this.preu = preu;
     }
 
     public static void main(String[] args) throws IOException {
@@ -122,7 +132,11 @@ public class ArticlesCompra implements Serializable {
                 System.out.println("Introdueix la secció:");
                 String seccio = reader.readLine();
 
-                ArticlesCompra article = new ArticlesCompra(descripcio, quantitat, unitat, seccio);
+                System.out.println("Introdueix el preu:");
+
+                double preu = Double.parseDouble(reader.readLine());
+
+                ArticlesCompra article = new ArticlesCompra(descripcio, quantitat, unitat, seccio, preu);
                 llistaCompra.add(article);
             }
 
@@ -140,6 +154,7 @@ public class ArticlesCompra implements Serializable {
                     writer.write("  <quantitat>" + article.getQuantitat() + "</quantitat>\n");
                     writer.write("  <unitat>" + article.getUnitat() + "</unitat>\n");
                     writer.write("  <seccio>" + article.getSeccio() + "</seccio>\n");
+                    writer.write("  <preu>" + article.getSeccio() + "</preu>\n");
                     writer.write("  </article>\n");
                 }
 
